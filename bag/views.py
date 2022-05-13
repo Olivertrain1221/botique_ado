@@ -9,7 +9,7 @@ def view_bag(request):
     return render(request, 'bag/bag.html')
 
 
-def add_to_bag(request):
+def add_to_bag(request, item_id):
     """
     Adds to the bag
     """
@@ -24,5 +24,4 @@ def add_to_bag(request):
         bag[item_id] = quantity
 
     request.session['bag'] = bag
-    return(request.session['bag'])
     return redirect(redirect_url)
