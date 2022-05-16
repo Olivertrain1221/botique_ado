@@ -1,0 +1,22 @@
+<script type ="text/javascript">
+    //javascript to change the box depending on wether a user puts more or less quantity (bag buttons)
+
+    // Uses id below to get the button
+    $('.increment-qty').click(function(e) {
+        e.preventDefault();
+        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+        var currentValue = parseInt($(closestInput).val());
+        $(closestInput).val(currentValue + 1);
+    });
+
+
+    
+    $('.decrement-qty').click(function(e) {
+        e.preventDefault();
+        // goes out of the current area in dom up one level via closes and find the quantityy value via index
+        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+        // takes current quantity value and -
+        var currentValue = parseInt($(closestInput).val());
+        $(closestInput).val(currentValue - 1);
+    });
+</script>
